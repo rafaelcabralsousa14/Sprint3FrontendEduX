@@ -8,6 +8,21 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Cour x=ier New',
     monospace;
+}
+
+.justify {
+  display: flex;
+  justify-content: space-around;
+}
+
+.center {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.imag {
+  width: 60px;
+  height: 30px;
 }
