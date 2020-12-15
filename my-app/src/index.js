@@ -16,7 +16,6 @@ import CrudCursos from './pages/admin/crudcursos';
 import CrudObjetivos from './pages/admin/crudobjetivos';
 import CrudTurmas from './pages/admin/crudturmas';
 import Dicas from './pages/dicas';
-import { LoaderProvider, useLoading, BallTriangle } from '@agney/react-loading';
 
 const RotaPrivada = ({component : Component, ...rest}) => (
   <Route 
@@ -47,12 +46,12 @@ const routing = (
           <Route exact path='/' component={Home}  />
           <Route path='/login' component={Login} />
           <Route path='/cadastrar' component={Cadastrar} />
-          <RotaPrivada path='/objetivos' component={Objetivos} />
-          <RotaPrivadaAdmin path='/admin/crudobjetivos' component={CrudObjetivos} />
-          <RotaPrivada path='/cursos' component={Cursos} />
-          <RotaPrivadaAdmin path='/admin/crudcursos' component={CrudCursos} />
-          <RotaPrivada path='/turmas' component={Turmas} />
-          <RotaPrivadaAdmin path='/admin/crudturmas' component={CrudTurmas} />
+          <Route path='/objetivos' component={Objetivos} />
+          <Route path='/admin/crudobjetivos' component={CrudObjetivos} />
+          <Route path='/cursos' component={Cursos} />
+          <Route path='/admin/crudcursos' component={CrudCursos} />
+          <Route path='/turmas' component={Turmas} />
+          <Route path='/admin/crudturmas' component={CrudTurmas} />
           <Route path='/dicas' component={Dicas} />
           <Route component={NaoEncontrado} />
         </Switch>

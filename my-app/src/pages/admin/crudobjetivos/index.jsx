@@ -9,7 +9,7 @@ const CrudObjetivos = () => {
 
     const [idObjetivo, setId ] = useState(0);
     const [descricao, setDescricao] = useState('');
-    const [categoria, setCategoria] = useState('');
+    // const [categoria, setCategoria] = useState('');
     const [objetivos, setObjetivos] = useState([]);
 
 
@@ -18,7 +18,7 @@ const CrudObjetivos = () => {
     },[]);
 
     const listarObjetivos= () => {
-        fetch(`${url}/objetivo`, {
+        fetch(`${url}/objetivos`, {
             headers : {             
                 'authorization' : 'Bearer ' + localStorage.getItem('token-edux')         
         }
@@ -36,14 +36,14 @@ const CrudObjetivos = () => {
             
             setId(0);    
             setDescricao('');
-            setCategoria('');
+            // setCategoria('');
     }
 
     const salvar = (event) => {
         event.preventDefault();
 
         const objetivo = {
-            categoria : categoria, 
+            // categoria : categoria, 
             descricao : descricao,
         }
     
@@ -82,7 +82,7 @@ const CrudObjetivos = () => {
           
             setId(dado.idObjetivo)
             setDescricao(dado.descricao);
-            setCategoria(dado.categoria);
+            // setCategoria(dado.categoria);
             console.log(dado);
         })
     }
@@ -120,10 +120,10 @@ const CrudObjetivos = () => {
                             <Form.Label>Descrição</Form.Label>
                             <Form.Control type="text" value={descricao} onChange={event => setDescricao(event.target.value)} placeholder="Descrição de Objetivo" />
                         </Form.Group>
-                        <Form.Group controlId="formBasicTitulo">
+                        {/* <Form.Group controlId="formBasicTitulo">
                             <Form.Label>Categoria</Form.Label>
                             <Form.Control type="text" value={categoria} onChange={event => setCategoria(event.target.value)} placeholder="Categoria do Objetivo" />
-                        </Form.Group>
+                        </Form.Group> */}
                         <Button type="submit" style={{ background: '#00d65f', borderColor: '#00d65f' }}>Salvar</Button>
                     </Form>
                 </Card.Body>
@@ -132,7 +132,7 @@ const CrudObjetivos = () => {
                 <thead>
                     <tr className="justify">
                         <th>Descrição</th>
-                        <th>Categoria</th>
+                        {/* <th>Categoria</th> */}
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -142,7 +142,7 @@ const CrudObjetivos = () => {
                             return (
                                 <tr key={index}>
                                     <td>{item.descricao}</td>
-                                    <td>{item.categoria}</td>
+                                    {/* <td>{item.categoria}</td> */}
                                     <td style={{ display: 'flex' }}>
                                         <Button variant="info" value={item.idObjetivo} onClick={event => editar(event)} >Editar</Button>
                                         <Button variant="danger" value={item.idObjetivo} onClick={event => remover(event)} style={{ marginLeft: '20px' }}>Remover</Button>
