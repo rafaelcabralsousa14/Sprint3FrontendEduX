@@ -36,7 +36,7 @@ const Login = () => {
                 return response.json();
             }
 
-            alert('Dados inválidos')
+            alert('Dados inválido')
         })
         .then(data => {
             localStorage.setItem('token-edux', data.token)
